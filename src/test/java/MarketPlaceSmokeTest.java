@@ -24,14 +24,14 @@ public class MarketPlaceSmokeTest {
         String expectedText = "Tržiště";
 
         MarketPlacePage page = new MarketPlacePage(driver).get();
-        assertThat(String.format("Could not find text %s in page header", expectedText), page.getPageHeaderText(), is(expectedText));
+        assertThat(String.format("Could not find text %s in the page header", expectedText), page.getPageHeaderText(), is(expectedText));
     }
 
     @Test
     public void loansDisplayed() {
 
         MarketPlacePage page = new MarketPlacePage(driver).get();
-        assertThat("There is not a single loan on page.", page.loanItemsOnPage(), not(0));
+        assertThat("There is not a single loan on the page.", page.loanItemsOnPage(), not(0));
     }
 
     @AfterClass
