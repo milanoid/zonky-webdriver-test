@@ -1,3 +1,4 @@
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
@@ -7,13 +8,14 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.URL;
 
-public class Browserstack {
+public class BrowserStackTest {
 
     public static final String USERNAME = "milanvojnovic";
     public static final String AUTOMATE_KEY = "qK8r62hczAFVpFEesPoh";
     public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
-    public static void main(String[] args) throws Exception {
+    @Test
+    public void dummyTest() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("browser", "Edge");
