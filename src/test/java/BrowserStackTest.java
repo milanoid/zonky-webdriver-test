@@ -17,6 +17,11 @@ public class BrowserStackTest {
     @Test
     public void dummyTest() throws Exception {
 
+        String browser = System.getenv("Browser");
+        String zonkyEnvironment = System.getenv("ZonkyEnvironment");
+        System.out.print("BROWSER: " + browser);
+        System.out.print("ENV: " + zonkyEnvironment);
+
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("browser", "Edge");
         caps.setCapability("browser_version", "14.0");
