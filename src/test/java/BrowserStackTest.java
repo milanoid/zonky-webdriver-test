@@ -20,7 +20,15 @@ public class BrowserStackTest {
         String browser = System.getenv("Browser");
         String zonkyEnvironment = System.getenv("ZonkyEnvironment");
         System.out.print("BROWSER: " + browser);
-        System.out.print("ENV: " + zonkyEnvironment);
+        System.out.print("\nENV: " + zonkyEnvironment);
+
+
+        String browserStackUser = System.getenv("BROWSERSTACK_USER");
+        String browserStacAcessKey = System.getenv("BROWSERSTACK_ACCESSKEY");
+        System.out.print("\nUSER: " + browserStackUser);
+        System.out.print("\nACCESS_KEY: " + browserStacAcessKey);
+
+
 
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("browser", "Edge");
