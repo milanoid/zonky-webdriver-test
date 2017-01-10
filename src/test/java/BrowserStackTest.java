@@ -10,24 +10,12 @@ import java.net.URL;
 
 public class BrowserStackTest {
 
-    public static final String USERNAME = "milanvojnovic";
-    public static final String AUTOMATE_KEY = "qK8r62hczAFVpFEesPoh";
+    public static final String USERNAME = System.getenv("BROWSERSTACK_USER");
+    public static final String AUTOMATE_KEY = System.getenv("BROWSERSTACK_ACCESSKEY");
     public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
     @Test
     public void dummyTest() throws Exception {
-
-        String browser = System.getenv("Browser");
-        String zonkyEnvironment = System.getenv("ZonkyEnvironment");
-        System.out.print("BROWSER: " + browser);
-        System.out.print("\nENV: " + zonkyEnvironment);
-
-
-        String browserStackUser = System.getenv("BROWSERSTACK_USER");
-        String browserStacAcessKey = System.getenv("BROWSERSTACK_ACCESSKEY");
-        System.out.print("\nUSER: " + browserStackUser);
-        System.out.print("\nACCESS_KEY: " + browserStacAcessKey);
-
 
 
         DesiredCapabilities caps = new DesiredCapabilities();
