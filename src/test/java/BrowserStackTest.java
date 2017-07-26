@@ -9,9 +9,9 @@ import java.net.URL;
 
 public class BrowserStackTest {
 
-    public static final String USERNAME = System.getenv("BROWSERSTACK_USER");
-    public static final String AUTOMATE_KEY = System.getenv("BROWSERSTACK_ACCESSKEY");
-    public static final String URL = String.format("https://%s:%s@hub-cloud.browserstack.com/wd/hub", USERNAME, AUTOMATE_KEY);
+    public static final String USERNAME = System.getenv("USERNAME");
+    public static final String ACCESS_KEY = System.getenv("ACCESS_KEY");
+    public static final String URL = String.format("https://%s:%s@hub-cloud.browserstack.com/wd/hub", USERNAME, ACCESS_KEY);
 
     @Test
     public void dummyTest() throws Exception {
@@ -23,6 +23,10 @@ public class BrowserStackTest {
         caps.setCapability("os", "Windows");
         caps.setCapability("os_version", "10");
         caps.setCapability("resolution", "1280x1024");
+        caps.setCapability("browserstack.debug", "true");
+        caps.setCapability("browserstack.local", "true");
+        caps.setCapability("browserstack.localIdentifier", System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER"));
+        caps.setCapability("browserstack.selenium_version", "3.4.0");
 
         WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
         driver.get("http://www.google.com");
