@@ -1,6 +1,5 @@
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -12,7 +11,7 @@ public class BrowserStackTest {
 
     public static final String USERNAME = System.getenv("BROWSERSTACK_USER");
     public static final String AUTOMATE_KEY = System.getenv("BROWSERSTACK_ACCESSKEY");
-    public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
+    public static final String URL = String.format("https://%s:%s@hub-cloud.browserstack.com/wd/hub", USERNAME, AUTOMATE_KEY);
 
     @Test
     public void dummyTest() throws Exception {
@@ -26,7 +25,6 @@ public class BrowserStackTest {
         caps.setCapability("resolution", "1280x1024");
 
         WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
-        driver.manage().window().maximize();
         driver.get("http://www.google.com");
         WebElement element = driver.findElement(By.name("q"));
 
