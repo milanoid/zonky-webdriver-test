@@ -24,7 +24,7 @@ public class BrowserStackTest {
         caps.setCapability("os_version", "10");
         caps.setCapability("resolution", "1280x1024");
         caps.setCapability("browserstack.debug", "true");
-        caps.setCapability("browserstack.local", System.getenv("BROWSERSTAC_LOCAL"));
+        caps.setCapability("browserstack.local", "true");
         caps.setCapability("browserstack.localIdentifier", System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER"));
         caps.setCapability("browserstack.selenium_version", "3.4.0");
 
