@@ -1,9 +1,10 @@
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.URL;
 
@@ -29,11 +30,13 @@ public class BrowserStackTest {
         caps.setCapability("browserstack.selenium_version", "3.4.0");
 
         WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
-        driver.get("http://www.google.com");
-        WebElement element = driver.findElement(By.name("q"));
+        driver.get("https://test.zonkej.cz/account/login");
 
-        element.sendKeys("BrowserStack");
-        element.submit();
+        new WebDriverWait(driver, 10).until(
+                ExpectedConditions.and(
+                        ExpectedConditions.visibilityOfElementLocated(By.xpath(".//input[@id='username']")),
+                        ExpectedConditions.visibilityOfElementLocated(By.xpath(".//input[@id='password']")))
+        );
 
         System.out.println(driver.getTitle());
         driver.quit();
