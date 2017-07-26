@@ -1,7 +1,8 @@
 language: java
-script: mvn test -Dtest=BrowserStackTest -DBROWSERSTACK_USER=$BROWSERSTACK_USER -DBROWSERSTACK_ACCESSKEY=$BROWSERSTACK_ACCESSKEY
+script: mvn test -Dtest=BrowserStackTest
 addons:
   browserstack:
     username: "adminzonky1"
     access_key:
       secure: "FyQoLTCpvpJncsGcDrkB19f9wztQuk3WpehVWAp4PL/w9SqxtNVQZoVc3f/jy2QEbPKQWSbeDFgY2aZt1aG1VREPJjJ1hx8hrLmC8Kxs8CwQaP/23etIHjD5z0NwMeRMHaf1RrLPgElw8vLAGhiY2Yt+Ah0XACP8YjlQeAt2WfOJgfmFZb9YruDsdBVdV0/qXI4SvYhm7GS6ASOLsGfAfPc1ey6eoGhEjOlXxNblWt5K3uQOpnyV0LaQ2Nw7fGRPnMdlSGzdkohC7Q6n+WeBIms99hRwjiSgqJjh3sOoZLJzso0zy/etCa4JVb9VeDYs7sN0WQujavKk2XtsqDIaaIf5o8Td9eWhUEcbU4Kdf2Zgsxkrc4SZ3SYywGe0LoBGVDkIXjdFteMdYE4RErKxDTMfwx5lJ/N7cLQUm9IyGMA2y9WyZbkgwm9g/RA6qn7EttnhcSae0UMT0z9gfk3PvDSjy+2Hcm34e/SRYA0QfNR4t/XwodTigC+fFIC/zrj8AWnRPhkVNl0jJLEmIuiOnfrNC1eczy9auCtAWsqqWBtOtlvGqV5z4t4lqu0e9nZEWdxWdyHWLnRYmHLuz9a6s7Z0pTe45Du14DRUys++FjrMB3+w5A6oY6I4n131/MwFWGgr4ChzssoZj87DaGnp6QMbp3V5dN89tAnPZh3n86E="
+    forcelocal: true
