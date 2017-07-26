@@ -2,5 +2,5 @@ language: java
 script: mvn test -Dtest=BrowserStackTest -DBROWSERSTACK_USER=$BROWSERSTACK_USER -DBROWSERSTACK_ACCESSKEY=$BROWSERSTACK_ACCESSKEY
 addons:
   browserstack:
-    username: $DBROWSERSTACK_USER
+    username: "adminzonky1"
     access_key: $BROWSERSTACK_ACCESSKEY
